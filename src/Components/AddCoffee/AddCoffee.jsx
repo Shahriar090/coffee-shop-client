@@ -1,7 +1,7 @@
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import bgImage from "../../assets/add-coffee-banner.jpg";
+import bgImage from "../../assets/add-coffee-banner-2.jpg";
 
 const AddCoffee = () => {
   const handleAddCoffee = (event) => {
@@ -38,13 +38,13 @@ const AddCoffee = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.insertedId){
-             toast.success("Coffee added successfully!");
+        if (data.insertedId) {
+          toast.success("Coffee added successfully!");
         }
       })
-      .catch(error=>{
+      .catch((error) => {
         toast.error("Failed to add coffee. Please try again.");
-      })
+      });
   };
   return (
     <div
@@ -63,9 +63,6 @@ const AddCoffee = () => {
         <h1 className="text-6xl text-white text-center font-bold font-serif pt-10">
           Add your coffee
         </h1>
-        {/* <h1 className="text-5xl text-white uppercase font-bold text-center font-serif bg-transparent p-10 w-1/2 mx-auto">
-            add your coffee
-            </h1> */}
       </div>
       {/* form */}
       <div className="relative p-28" style={{ zIndex: 1 }}>
@@ -184,21 +181,21 @@ const AddCoffee = () => {
           <input
             type="submit"
             value="Add Coffee"
-            className="btn btn-block btn-outline mt-5 text-white"
+            className="btn btn-block btn-outline mt-5 text-white hover:bg-red-950"
           />
         </form>
       </div>
-       <ToastContainer
-                position="bottom-right"
-                autoClose={3000} // Auto-close the toast after 3 seconds
-                hideProgressBar={true}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000} // Auto-close the toast after 3 seconds
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

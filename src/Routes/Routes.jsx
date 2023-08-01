@@ -23,7 +23,8 @@ import UpdateCoffee from "../Components/UpdateCoffee/UpdateCoffee";
         },
         {
             path: '/updateCoffee',
-            element: <UpdateCoffee></UpdateCoffee>
+            element: <UpdateCoffee></UpdateCoffee>,
+            loader: ()=> fetch('http://localhost:5000/coffee')
         }
       ]
     },
